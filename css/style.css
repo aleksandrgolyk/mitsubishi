@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 body {
@@ -8,6 +9,10 @@ body {
 
 .d-flex {
     display: flex;
+}
+
+.d-wrap {
+    flex-wrap: wrap;
 }
 
 .f-col {
@@ -30,29 +35,28 @@ body {
     align-items: center;
 }
 
-.btn{
+.btn {
     padding-bottom: 10px;
 
 }
 
-a.btn{
+a.btn {
     color: #eee;
-    text-decoration: none  ;
+    text-decoration: none;
 }
 
 /*=================================================*/
 
 
-
-
-.nav {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    /*background: #eee;*/
-}
+/*.nav {*/
+/*    position: fixed;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    !*background: #eee;*!*/
+/*}*/
 
 .nav-button {
+    position: fixed;
     background: transparent;
     width: 100px;
     height: 100px;
@@ -76,7 +80,7 @@ a.btn{
 }
 
 .nav-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 100px;
     height: 100px;
@@ -125,6 +129,7 @@ a.btn{
     padding: 30px 50px;
     border-left: #645F5F 1px solid;
     position: relative;
+
 }
 
 .nav-search > input {
@@ -132,6 +137,8 @@ a.btn{
     background: transparent;
     padding: 10px 15px;
     color: white;
+    width: 100%;
+
 }
 
 .nav-search > input:focus {
@@ -147,6 +154,7 @@ a.btn{
     position: absolute;
     font-family: "Font Awesome 5 Free", sans-serif;
     font-size: 24px;
+    font-weight: 700;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -155,7 +163,7 @@ a.btn{
 }
 
 .nav-scroll {
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     width: 100px;
@@ -202,19 +210,19 @@ a.btn{
 }
 
 .section-1 {
-    background: url("../img/bg.jpg") no-repeat center left;
+    background: url("../img/bg.jpg") no-repeat center center;
     background-size: cover;
 
 }
 
-.section-1 h1{
+.section-1 h1 {
     position: relative;
     font-size: 80px;
     font-weight: 800;
     font-family: Arial, sans-serif;
 }
 
-.section-1 h1::before{
+.section-1 h1::before {
     content: url("../img/dots.png");
     position: absolute;
     top: -5px;
@@ -222,14 +230,61 @@ a.btn{
 
 }
 
-.section-1 i{
-    padding: 10px;
-    background: red;
+.section-1 i {
+    padding: 20px;
+    background: transparent;
     border-radius: 50%;
+    border: 1px solid red;
+    margin-right: 21px;
+}
 
+.section-1 a {
+    display: inline-block;
+    margin-right: 51px;
+}
+.section-1 a:nth-child(2) i:hover{
+    background: green;
+}
+
+.section-1 a:hover i {
+    background: red;
+    border: 1px solid red;
+}
+
+.links {
+    margin-bottom: 30px;
+}
+
+.section-1 .desc ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.section-1 .desc ul li {
+    font-size: 14px;
+    padding-right: 200px;
+    margin-bottom: 50px;
 }
 
 
+.section-1 .stars {
+    font-family: 'Font Awesome 5 Free';
+
+}
+
+.section-1 .stars .star::before {
+    content: '\f005';
+    font-size: 18px;
+}
+
+.section-1 .stars .star:hover::before {
+    font-weight: 700;
+}
+
+.section-1 .stars .star.active {
+    font-weight: 700;
+}
 
 
 .section-2 {
@@ -238,6 +293,62 @@ a.btn{
 }
 
 
+/*==========================MEDIA=================*/
+
+@media (max-width: 1024px) {
+
+    .nav-header-menu {
+        padding-left: 20px;
+    }
+
+    .nav-header-menu-item {
+        padding: 0 15px;
+    }
+
+    .nav-header-menu-item > a {
+        padding: 41px 0;
+    }
+
+    .section {
+        padding: 60px 20px 20px 140px;
+    }
+
+    .section-1 .desc ul {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .nav-header-menu {
+        display: none;
+    }
+
+    .nav-search {
+        border-left: none;
+        width: 100%;
+    }
+
+    .section {
+          padding: 75px 20px 20px 140px;
+      }
+
+
+    .section-1 h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 500px){
+.nav-scroll{
+    display: none;
+}
+    .section {
+        padding: 75px 20px 20px 45px;
+    }
+}
+/*==========================MEDIA=================*/
 
 
 
